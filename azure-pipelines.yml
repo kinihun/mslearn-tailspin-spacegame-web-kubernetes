@@ -57,11 +57,12 @@ stages:
     - task: KubernetesManifest@0
       displayName: Create imagePullSecret
       inputs:
-        action: createSecret
-        secretName: $(imagePullSecret)
-        dockerRegistryEndpoint: 'Container Registry Connection'
-        kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+        action: 'createSecret'
+        kubernetesServiceConnection: 'spike-tailspinspacegame-8016-default-1593868908231'
         namespace: 'default'
+        secretType: 'dockerRegistry'
+        secretName: '$(imagePullSecret)'
+        dockerRegistryEndpoint: 'Container Registry Connection'
     - task: KubernetesManifest@0
       displayName: Deploy to Kubernetes cluster
       inputs:
