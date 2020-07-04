@@ -49,7 +49,6 @@ stages:
     displayName: 'Deploy job'
     pool:
       vmImage: 'ubuntu-18.04'
-    environment: 'spike.default'
     variables:
     - group: Release
     steps:
